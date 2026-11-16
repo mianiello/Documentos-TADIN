@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA-DIN | Recubrimientos Industriales en Polvo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --azul:       #111E2E; /* Azul oscuro profundo y elegante */
+            --azul-med:   #1A2D44; /* Variante media para hovers y sutilezas */
+            --azul-vivo:  #243D5C; /* Azul de acento sobrio */
+            --gris-osc:   #2C363F; 
+            --gris-med:   #5A6571;
+            --gris-lne:   #DDE3EB;
+            --bg-claro:   #FDFDFB; /* Blanco roto pulcro para secciones alternas */
+            --bg-soluciones: #EAECF2; /* Tono de fondo de la sección soluciones */
+            --blanco-tarjetas: #FFFFFF; /* Blanco puro para tarjetas */
+            --texto-cuerpo: #111E2E;
+            --instagram:  #111E2E;
+        }
+ 
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: var(--texto-cuerpo);
+            background: var(--bg-claro);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+ 
+        /* ─── UTILIDADES ─── */
+        .wrap { width:90%; max-width:1180px; margin:0 auto; }
+ 
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--azul-vivo);
+            margin-bottom: 16px;
+        }
+        .kicker::before {
+            content:'';
+            display:inline-block;
+            width:24px; height:2px;
+            background:var(--azul-vivo);
+            flex-shrink:0;
+        }
+        .kicker.w { color:rgba(253,253,251,.6); }
+        .kicker.w::before { background:rgba(253,253,251,.35); }
+ 
+        h2.tit {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 3.8vw, 3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            line-height: 1.1;
+            color: var(--azul);
+            margin-bottom: 18px;
+        }
+        h2.tit.w { color: var(--blanco-tarjetas); }
+ 
+        .sub {
+            font-size: 1.05rem;
+            color: var(--gris-med);
+            max-width: 680px;
+            font-weight: 400;
+        }
+        .sub.w { color: rgba(253,253,251,.65); }
+ 
+        .raya {
+            width: 40px; height: 3px;
+            background: var(--azul-vivo);
+            margin: 0 0 22px;
+        }
+        .raya.w { background: rgba(253,253,251,.4); }
+ 
+        section { padding: 100px 0; }
+ 
+        /* ─── BTN ─── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 32px;
+            border-radius: 2px;
+            transition: all .22s;
+            cursor: pointer;
+        }
+        .btn-sol {
+            background: var(--azul-vivo);
+            color: var(--blanco-tarjetas);
+        }
+        .btn-sol:hover { background: var(--azul); transform: translateY(-2px); }
+        
+        .btn-alt {
+            background: transparent;
+            color: var(--blanco-tarjetas);
+            border: 1px solid rgba(253,253,251,0.5);
+        }
+        .btn-alt:hover { 
+            background: rgba(253,253,251,0.1); 
+            border-color: var(--blanco-tarjetas);
+            transform: translateY(-2px); 
+        }
+ 
+        /* ─── HEADER ─── */
+        header {
+            position: sticky;
+            top: 0; z-index: 900;
+            background: var(--blanco-tarjetas);
+            border-bottom: 1px solid var(--gris-lne);
+            box-shadow: 0 2px 12px rgba(17,30,46,0.06);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo img { height: 44px; display:block; }
+        .logo-contenedor-texto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.1;
+        }
+        .logo-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--azul);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        .logo-subtexto {
+            font-size: 0.58rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gris-med);
+            margin-top: 2px;
+            display: block;
+            white-space: nowrap;
+        }
+        nav ul { display:flex; list-style:none; gap:26px; align-items:center; }
+        nav a {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--gris-osc);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        nav a:hover { color: var(--azul-vivo); }
+        
+        /* Contenedor y estilos mejorados para botones del Header */
+        .nav-ctas-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+        }
+        .nav-btn i {
+            font-size: 0.85rem;
+        }
+
+        /* Estilo elegante Outline para Contacto */
+        .nav-btn-contacto {
+            background: transparent;
+            color: var(--azul);
+            border: 1.5px solid var(--azul);
+        }
+        .nav-btn-contacto:hover {
+            background: rgba(17, 30, 46, 0.06);
+            color: var(--azul);
+            transform: translateY(-1px);
+        }
+
+        /* Estilo Destacado Solid para Cotización */
+        .nav-btn-cotizacion {
+            background: linear-gradient(135deg, var(--azul) 0%, var(--azul-med) 100%);
+            color: var(--blanco-tarjetas) !important;
+            border: 1.5px solid transparent;
+            box-shadow: 0 4px 10px rgba(17, 30, 46, 0.15);
+        }
+        .nav-btn-cotizacion:hover {
+            background: linear-gradient(135deg, var(--azul-med) 0%, var(--azul-vivo) 100%);
+            color: var(--blanco-tarjetas) !important;
+            box-shadow: 0 6px 14px rgba(17, 30, 46, 0.25);
+            transform: translateY(-1px);
+        }
+ 
+        /* ─── HERO INTRO FULL-SCREEN ─── */
+        .hero {
+            background: radial-gradient(circle, var(--azul-med) 0%, var(--azul) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            min-height: calc(100vh - 77px); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-lines {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    -50deg,
+                    rgba(253,253,251,0.012) 0, rgba(253,253,251,0.012) 1px,
+                    transparent 1px, transparent 56px
+                );
+            pointer-events: none;
+        }
+        .hero-inner {
+            position: relative; 
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-logo-container {
+            max-width: 1050px; 
+            width: 90%;
+            margin: 0 auto;
+        }
+        .hero-logo {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+        }
+        
+        .hero-logo-fallback {
+            text-align: center;
+            color: var(--blanco-tarjetas);
+        }
+        .hero-logo-fallback h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(4.5rem, 12vw, 8.5rem); 
+            font-weight: 800;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            line-height: 0.95;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .hero-logo-fallback p {
+            font-family: 'Barlow', sans-serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.6rem); 
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #A3B8CC;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+        
+        /* Indicador de Scroll */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(253,253,251,0.35);
+            font-size: 1.6rem;
+            animation: bounce 2s infinite;
+            z-index: 5;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .scroll-indicator:hover { color: var(--blanco-tarjetas); }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -12px); }
+            60% { transform: translate(-50%, -6px); }
+        }
+ 
+        /* ─── SECCIÓN MÉTRICAS ─── */
+        .metricas-bar {
+            background: var(--azul);
+            border-bottom: 4px solid var(--azul-vivo);
+            padding: 40px 0;
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .stat-card {
+            background: rgba(253,253,251,0.04);
+            border: 1px solid rgba(253,253,251,0.1);
+            border-left: 3px solid var(--azul-vivo);
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: background .2s;
+        }
+        .stat-card:hover { background: rgba(253,253,251,0.08); }
+        .stat-icon {
+            width: 46px; height: 46px;
+            background: rgba(163,184,204,0.14);
+            border-radius: 2px;
+            display: flex; align-items:center; justify-content:center;
+            flex-shrink: 0;
+        }
+        .stat-icon i { font-size:1.35rem; color: var(--blanco-tarjetas); }
+        .stat-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--blanco-tarjetas);
+            line-height: 1;
+        }
+        .stat-num sup {
+            font-size: 1rem;
+            color: var(--blanco-tarjetas);
+            vertical-align: super;
+        }
+        .stat-lbl {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(253,253,251,.45);
+            margin-top: 4px;
+        }
+        .stat-desc {
+            font-size: 0.85rem;
+            color: rgba(253,253,251,.55);
+            margin-top: 2px;
+        }
+ 
+        /* ─── HISTORIA ─── */
+        #nosotros { background: var(--bg-claro); }
+        .historia-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .iso-lista { margin-top: 32px; display:flex; flex-direction:column; gap:10px; }
+        .iso-item {
+            display: flex; align-items:center; gap:14px;
+            background: var(--blanco-tarjetas);
+            border: 1px solid var(--gris-lne);
+            border-left: 3px solid var(--azul-vivo);
+            padding: 14px 18px;
+            box-shadow: 0 4px 12px rgba(17,30,46,0.03);
+        }
+        .iso-item i { font-size:1.1rem; color:var(--azul-vivo); width:20px; text-align:center; }
+        .iso-item strong { font-size:.85rem; font-weight:600; color:var(--azul); display:block; }
+        .iso-item span { font-size:.77rem; color:var(--gris-med); }
+        .historia-cuerpo p {
+            font-size: 1.05rem;
+            color: var(--texto-cuerpo);
+            margin-bottom: 22px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        .historia-cuerpo p:last-child { margin-bottom:0; }
+        .historia-cuerpo strong { color:var(--azul); font-weight:600; }
+ 
+        /* ─── SOLUCIONES Y GALERÍA MODAL ─── */
+        #soluciones { background: var(--bg-soluciones); border-top: 1px solid var(--gris-lne); border-bottom: 1px solid var(--gris-lne); }
+        .sol-hdr { margin-bottom: 56px; }
+ 
+        .sol-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 0;
+            border: 1px solid var(--gris-lne);
+            box-shadow: 0 12px 30px rgba(17,30,46,0.04);
+        }
+        .sol-card {
+            padding: 0;
+            border-right: 1px solid var(--gris-lne);
+            position: relative;
+            transition: background .25s, transform .25s ease, box-shadow .25s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: var(--blanco-tarjetas);
+            cursor: pointer;
+        }
+        .sol-card:last-child { border-right: none; }
+        .sol-card:hover { 
+            background: var(--azul); 
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+ 
+        .sol-card-head {
+            background: var(--azul);
+            padding: 22px 28px 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: background .25s;
+            border-bottom: 2px solid var(--azul-vivo);
+        }
+        .sol-card:hover .sol-card-head {
+            background: rgba(253,253,251,0.08);
+        }
+        .sol-n-badge {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: rgba(253,253,251,.35);
+            letter-spacing: 1px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .sol-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+            color: var(--blanco-tarjetas);
+            line-height: 1.25;
+        }
+ 
+        .sol-card-body {
+            padding: 28px 28px 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+        }
+        .sol-ico {
+            width: 44px; height: 44px;
+            background: var(--bg-soluciones);
+            border: 1px solid var(--gris-lne);
+            display: flex; align-items:center; justify-content:center;
+            transition: background .25s, border-color .25s;
+        }
+        .sol-ico i { font-size:1.25rem; color:var(--azul-vivo); transition:color .25s; }
+        .sol-card:hover .sol-ico { background:rgba(163,184,204,.2); border-color:rgba(163,184,204,.3); }
+        .sol-card:hover .sol-ico i { color: #A3B8CC; }
+ 
+        .sol-card p {
+            font-size:.93rem;
+            color:var(--gris-med);
+            line-height:1.75;
+            transition:color .25s;
+        }
+        .sol-card:hover p { color:rgba(253,253,251,.75); }
+
+        .ver-galeria-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--azul-vivo);
+            transition: color 0.25s ease;
+        }
+        .sol-card:hover .ver-galeria-btn {
+            color: #A3B8CC;
+        }
+
+        /* ─── MODAL DE GALERÍA DE FOTOS ─── */
+        .modal-galeria {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(17, 30, 46, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-galeria.activo {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-contenido {
+            background: var(--blanco-tarjetas);
+            width: 100%;
+            max-width: 960px;
+            max-height: 90vh;
+            border-radius: 4px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-header {
+            background: var(--azul);
+            color: var(--blanco-tarjetas);
+            padding: 20px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 3px solid var(--azul-vivo);
+        }
+        .modal-header h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        .btn-cerrar-modal {
+            background: transparent;
+            border: none;
+            color: var(--blanco-tarjetas);
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .btn-cerrar-modal:hover { opacity: 1; }
+        .modal-body { padding: 28px; }
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .galeria-item {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            height: 220px;
+            border: 1px solid var(--gris-lne);
+            background: #f0f0f0;
+        }
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .galeria-item:hover img { transform: scale(1.05); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+ 
+        /* ─── IDENTIDAD ─── */
+        #identidad { background: var(--azul); padding: 100px 0; }
+        .id-hdr { margin-bottom:56px; }
+ 
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 72px;
+        }
+        .mv-card {
+            border: 1px solid rgba(253,253,251,.1);
+            overflow: hidden;
+        }
+        .mv-card-head {
+            background: rgba(253,253,251,0.07);
+            border-bottom: 2px solid var(--azul-vivo);
+            padding: 20px 36px;
+        }
+        .mv-card h3 {
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:1.5rem;
+            font-weight:800;
+            text-transform:uppercase;
+            letter-spacing:.8px;
+            color: var(--blanco-tarjetas);
+        }
+        .mv-card-body {
+            padding: 28px 36px 36px;
+        }
+        .mv-card p { font-size:1rem; color:rgba(253,253,251,.68); line-height:1.85; }
+ 
+        .val-titulo {
+            font-size:.7rem;
+            font-weight:600;
+            letter-spacing:3px;
+            text-transform:uppercase;
+            color:rgba(253,253,251,.35);
+            margin-bottom:26px;
+        }
+        .val-grid {
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            border-top:1px solid rgba(253,253,251,.1);
+            border-left:1px solid rgba(253,253,251,.1);
+        }
+        .val-item {
+            padding: 0;
+            border-right:1px solid rgba(253,253,251,.1);
+            border-bottom:1px solid rgba(253,253,251,.1);
+            overflow: hidden;
+            transition: all .22s;
+        }
+        .val-item:hover { background:rgba(253,253,251,.04); }
+        .val-item-head {
+            background: rgba(253,253,251,0.05);
+            border-bottom: 1px solid rgba(253,253,251,.08);
+            border-top: 2px solid transparent;
+            padding: 12px 20px;
+            transition: border-color .22s;
+        }
+        .val-item:hover .val-item-head { border-top-color: var(--azul-vivo); }
+        .val-item strong {
+            display:block;
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:1.05rem;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.4px;
+            color: var(--blanco-tarjetas);
+        }
+        .val-item-body {
+            padding: 14px 20px 18px;
+        }
+        .val-item p { font-size:.85rem; color:rgba(253,253,251,.5); line-height:1.65; }
+ 
+        /* ─── POR QUÉ ─── */
+        #elegirnos { background: var(--bg-claro); }
+        .pq-hdr { margin-bottom:56px; }
+        .pq-grid {
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+        .pq-card {
+            background: var(--blanco-tarjetas);
+            border:1px solid var(--gris-lne);
+            overflow: hidden;
+            transition: box-shadow .22s, transform .22s;
+            box-shadow: 0 4px 16px rgba(17,30,46,0.02);
+        }
+        .pq-card:hover { transform:translateY(-5px); box-shadow:0 18px 44px rgba(17,30,46,.1); }
+        .pq-card-head {
+            background: var(--azul);
+            border-bottom: 2px solid var(--azul-vivo);
+            padding: 18px 24px;
+        }
+        .pq-card h3 {
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:1.2rem;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.4px;
+            color: var(--blanco-tarjetas);
+            line-height: 1.2;
+        }
+        .pq-card-body {
+            padding: 24px 24px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .pq-ico {
+            width:44px; height:44px;
+            background: var(--bg-soluciones);
+            border: 1px solid var(--gris-lne);
+            display:flex; align-items:center; justify-content:center;
+        }
+        .pq-ico i { font-size:1.2rem; color:var(--azul-vivo); }
+        .pq-card p { font-size:.93rem; color:var(--gris-med); line-height:1.8; }
+ 
+        /* ─── CTA BANDA ─── */
+        .cta-banda {
+            background: var(--azul-med);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banda::before {
+            content:'';
+            position:absolute; inset:0;
+            background-image: repeating-linear-gradient(
+                -50deg,
+                rgba(253,253,251,0.025) 0, rgba(253,253,251,0.025) 1px,
+                transparent 1px, transparent 56px
+            );
+        }
+        .cta-banda .wrap { position:relative; z-index:1; }
+        .cta-banda h2 {
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:clamp(1.8rem,3vw,2.6rem);
+            font-weight:800;
+            text-transform:uppercase;
+            color: var(--blanco-tarjetas);
+            margin-bottom:14px;
+        }
+        .cta-banda p { color:rgba(253,253,251,.65); font-size:1rem; max-width:520px; margin:0 auto 36px; }
+        
+        .cta-botones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+ 
+        /* ─── FOOTER ─── */
+        footer {
+            background: #09111A; 
+            border-top: 3px solid var(--azul-vivo);
+            padding: 72px 0 28px;
+            color: rgba(253,253,251,.45);
+            font-size:.9rem;
+        }
+        .ft-grid {
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr;
+            gap:64px;
+            padding-bottom:48px;
+            border-bottom:1px solid rgba(253,253,251,.08);
+        }
+        .ft-col h4 {
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:1rem;
+            font-weight:700;
+            letter-spacing:2.5px;
+            text-transform:uppercase;
+            color: var(--blanco-tarjetas);
+            margin-bottom:22px;
+        }
+        .ft-col p { line-height:1.85; }
+        .ft-col ul { list-style:none; }
+        .ft-col ul li { margin-bottom:12px; }
+        .ft-col ul li, .ft-col ul li a { color:rgba(253,253,251,.45); text-decoration:none; transition:color .2s; }
+        .ft-col ul li a:hover { color: var(--blanco-tarjetas); }
+        .ft-col strong { color:rgba(253,253,251,.8); font-weight:600; }
+        
+        .ft-social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color .2s;
+        }
+        .ft-social-link i { font-size: 1.1rem; }
+        .ft-social-link.mail-link:hover { color: #A3B8CC !important; }
+        .ft-social-link.ig-link:hover { color: var(--instagram) !important; }
+
+        .ft-bottom {
+            padding-top:24px;
+            display:flex; justify-content:space-between; align-items:center;
+            flex-wrap:wrap; gap:10px;
+            font-size:.77rem;
+            color:rgba(253,253,251,.28);
+        }
+        .iso-chips { display:flex; gap:10px; }
+        .iso-chip {
+            font-size:.68rem;
+            font-weight:600;
+            letter-spacing:1px;
+            color:rgba(253,253,251,.35);
+            border:1px solid rgba(253,253,251,.16);
+            padding:4px 11px;
+        }
+ 
+        /* ─── RESPONSIVE ─── */
+        @media (max-width:1150px){
+            nav ul { gap: 16px; }
+        }
+        @media (max-width:1060px){
+            .sol-grid { grid-template-columns:repeat(2,1fr); }
+            .sol-card { border-bottom:1px solid var(--gris-lne); }
+            .val-grid { grid-template-columns:repeat(2,1fr); }
+            .pq-grid { grid-template-columns:repeat(2,1fr); }
+            .historia-grid { grid-template-columns:1fr; gap:48px; }
+            .hero-stats { grid-template-columns:1fr; }
+            .stat-card { flex-direction:row; align-items:center; }
+        }
+        @media (max-width:880px){
+            .nav { flex-direction:column; gap:16px; padding:14px 0; align-items: center; text-align: center; }
+            nav ul { gap:14px; flex-wrap:wrap; justify-content:center; }
+            .nav-ctas-container { width: 100%; justify-content: center; margin-top: 4px; }
+        }
+        @media (max-width:720px){
+            section { padding:68px 0; }
+            .logo { flex-direction: column; gap: 8px; }
+            .logo-subtexto { white-space: normal; }
+            .sol-grid,.val-grid,.pq-grid,.mv-grid { grid-template-columns:1fr; }
+            .ft-grid { grid-template-columns:1fr; gap:40px; }
+            .ft-bottom { flex-direction:column; align-items:flex-start; }
+            .cta-botones { flex-direction: column; width: 100%; }
+            .cta-botones .btn { width: 100%; }
+            .nav-ctas-container { flex-direction: column; width: 100%; gap: 8px; }
+            .nav-btn { width: 100%; justify-content: center; }
+        }
+
+        /* ─── BOTONES FLOTANTES ─── */
+        .contenedor-flotante {
+            position: fixed;
+            right: 20px;
+            bottom: 20px; 
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+        .btn-flotante {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--blanco-tarjetas);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-flotante:hover {
+            transform: scale(1.1) translateY(-2px);
+            color: var(--blanco-tarjetas);
+        }
+        .btn-flotante.mail { background-color: var(--azul-vivo); }
+        .btn-flotante.mail:hover { background-color: var(--azul-med); }
+        .btn-flotante.instagram { background-color: var(--instagram); }
+        .btn-flotante.instagram:hover { background-color: var(--azul-med); }
+    </style>
+</head>
+<body>
+ 
+<header>
+    <div class="wrap">
+        <div class="nav">
+            <div class="logo">
+                <img src="Gemini_Generated_Image_vnl4vevnl4vevnl4_2.png" alt="TA-DIN" onerror="this.style.display='none';">
+                <div class="logo-contenedor-texto">
+                    <a href="#inicio" class="logo-text">TA·DIN</a>
+                    <span class="logo-subtexto">Servicio Profesional de Pintura Electroestática</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#soluciones">Soluciones</a></li>
+                    <li><a href="#identidad">Identidad</a></li>
+                    <li><a href="#elegirnos">¿Por qué elegirnos?</a></li>
+                </ul>
+            </nav>
+            <div class="nav-ctas-container">
+                <a href="https://api.whatsapp.com/send/?phone=5491168808040&text=Hola%2C+TA-DIN.+Me+comunico+para+realizar+una+consulta.&type=phone_number&app_absent=0" target="_blank" class="nav-btn nav-btn-contacto">
+                    <i class="fa-regular fa-comment"></i> Contacto
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGd82Jdg_6Gn1Rj59mM4-eqpnM5dUHn44p6f221eC770JCoA/viewform?usp=publish-editor" target="_blank" class="nav-btn nav-btn-cotizacion">
+                    <i class="fa-regular fa-file-lines"></i> Cotización
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+ 
+<section id="inicio" class="hero">
+    <div class="hero-lines"></div>
+    <div class="wrap">
+        <div class="hero-inner">
+            <div class="hero-logo-container">
+                <img src="Gemini_Generated_Image_vnl4vevnl4vevnl4_2.png" alt="TA-DIN Industrial Powder Coating" class="hero-logo" onerror="this.style.display='none';">
+                <div class="hero-logo-fallback">
+                    <h1>TA-DIN</h1>
+                    <p>Industrial Powder Coating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#nosotros" class="scroll-indicator" aria-label="Desplazarse hacia abajo">
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+</section>
+
+<div class="metricas-bar">
+    <div class="wrap">
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div>
+                    <div class="stat-num">45<sup>+</sup></div>
+                    <div class="stat-lbl">Años de trayectoria</div>
+                    <div class="stat-desc">Solvencia institucional en el sector industrial</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                    <div class="stat-num" style="font-size:1.9rem; letter-spacing:1px;">ISO ✓</div>
+                    <div class="stat-lbl">9001 & 14001</div>
+                    <div class="stat-desc">Procesos auditados y certificados</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-industry"></i></div>
+                <div>
+                    <div class="stat-num">4<sup>+</sup></div>
+                    <div class="stat-lbl">Sectores industriales</div>
+                    <div class="stat-desc">Petróleo, Energía, Telecomunicaciones y Minería</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<section id="nosotros">
+    <div class="wrap">
+        <div class="historia-grid">
+            <div class="historia-aside">
+                <span class="kicker">Desde 1979</span>
+                <h2 class="tit">Nuestra Historia</h2>
+                <div class="raya"></div>
+                <p class="sub">Casi medio siglo de permanencia ininterrumpida en el mercado industrial argentino.</p>
+                <div class="iso-lista">
+                    <div class="iso-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div>
+                            <strong>ISO 9001</strong>
+                            <span>Sistema de Gestión de Calidad</span>
+                        </div>
+                    </div>
+                    <div class="iso-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <div>
+                            <strong>ISO 14001</strong>
+                            <span>Sistema de Gestión Ambiental</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="historia-cuerpo">
+                <p>En <strong>TA-DIN</strong>, entendemos que el recubrimiento industrial no es un detalle estético secundario: constituye la protección fundamental del capital físico de su empresa. Nacimos hace 45 años bajo una premisa inalterable: consolidar un servicio donde la palabra empeñada, la responsabilidad ejecutiva y el compromiso operativo sean el núcleo de cada relación de negocios.</p>
+                <p>Hoy, esa misma filosofía de trabajo nos identifica y nos impulsa a posicionarnos como claros referentes en el sector industrial. Hemos evolucionado y sostenido un plan de inversión continua, logrando certificar nuestros procesos bajo las exigentes normativas internacionales <strong>ISO 9001 e ISO 14001</strong>.</p>
+                <p>Esto representa un aval explícito para nuestros clientes: máxima excelencia técnica en la aplicación de pintura en polvo y total conformidad con los estándares de gestión ambiental vigentes. No somos un proveedor más; somos el socio que responde con soluciones cuando el negocio lo demanda.</p>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="soluciones">
+    <div class="wrap">
+        <div class="sol-hdr">
+            <span class="kicker">Sectores de aplicación</span>
+            <h2 class="tit">Soluciones para Industrias<br>de Alta Exigencia</h2>
+            <div class="raya"></div>
+            <p class="sub">Sistemas avanzados de recubrimiento en polvo termoindurente desarrollados para resistir en ambientes de operación crítica.</p>
+        </div>
+        <div class="sol-grid">
+            <div class="sol-card" data-sector="petroleo">
+                <div class="sol-card-head">
+                    <span class="sol-n-badge">01</span>
+                    <h3>Petróleo & Gas / Gasoductos</h3>
+                </div>
+                <div class="sol-card-body">
+                    <div class="sol-ico"><i class="fa-solid fa-oil-well"></i></div>
+                    <p>Protección anticorrosiva de alta especificación técnica para tableros y elementos de conducción expuestos a condiciones climáticas y operativas severas.</p>
+                    <div class="ver-galeria-btn"><i class="fa-solid fa-images"></i> Ver trabajos realizados</div>
+                </div>
+            </div>
+            
+            <div class="sol-card" data-sector="energia">
+                <div class="sol-card-head">
+                    <span class="sol-n-badge">02</span>
+                    <h3>Energía</h3>
+                </div>
+                <div class="sol-card-body">
+                    <div class="sol-ico"><i class="fa-solid fa-bolt"></i></div>
+                    <p>Recubrimientos dieléctricos de alta tecnología con excelente retención de color y resistencia ante degradación climática o rayos UV en redes de distribución.</p>
+                    <div class="ver-galeria-btn"><i class="fa-solid fa-images"></i> Ver trabajos realizados</div>
+                </div>
+            </div>
+
+            <div class="sol-card" data-sector="telecomunicaciones">
+                <div class="sol-card-head">
+                    <span class="sol-n-badge">03</span>
+                    <h3>Telecomunicaciones</h3>
+                </div>
+                <div class="sol-card-body">
+                    <div class="sol-ico"><i class="fa-solid fa-tower-cell"></i></div>
+                    <p>Acabados industriales micrométricos y uniformes para la protección de estructuras exteriores, antenas y gabinetes tecnológicos críticos.</p>
+                    <div class="ver-galeria-btn"><i class="fa-solid fa-images"></i> Ver trabajos realizados</div>
+                </div>
+            </div>
+
+            <div class="sol-card" data-sector="mineria">
+                <div class="sol-card-head">
+                    <span class="sol-n-badge">04</span>
+                    <h3>Minería</h3>
+                </div>
+                <div class="sol-card-body">
+                    <div class="sol-ico"><i class="fa-solid fa-mountain-city"></i></div>
+                    <p>Esquemas formulados para máxima durabilidad mecánica frente a desgaste/rozamiento constante, impactos severos y ataques químicos hostiles en yacimientos.</p>
+                    <div class="ver-galeria-btn"><i class="fa-solid fa-images"></i> Ver trabajos realizados</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="identidad">
+    <div class="wrap">
+        <div class="id-hdr">
+            <span class="kicker w">Marco institutional</span>
+            <h2 class="tit w">Identidad y Gestión Integral</h2>
+            <div class="raya w"></div>
+            <p class="sub w">Sistemas corporativos estandarizados que aseguran repetibilidad, trazabilidad y control absoluto bajo normas ISO 9001 e ISO 14001.</p>
+        </div>
+ 
+        <div class="mv-grid">
+            <div class="mv-card">
+                <div class="mv-card-head">
+                    <h3>Misión</h3>
+                </div>
+                <div class="mv-card-body">
+                    <p>Brindar soluciones de pintura y esmaltado industrial con altos estándares de calidad, garantizando control del proceso, trazabilidad y cumplimiento de plazos, aportando valor al producto final de nuestros clientes.</p>
+                </div>
+            </div>
+            <div class="mv-card">
+                <div class="mv-card-head">
+                    <h3>Visión</h3>
+                </div>
+                <div class="mv-card-body">
+                    <p>Ser una empresa referente en servicios de tratamientos superficiales industriales, reconocida por su organización, confiabilidad operativa y capacidad de sostener calidad constante a través de un sistema de gestión profesional.</p>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="val-titulo">Valores Institucionales</div>
+        <div class="val-grid">
+            <div class="val-item">
+                <div class="val-item-head"><strong>Calidad</strong></div>
+                <div class="val-item-body"><p>La calidad se construye de manera minuciosa en cada etapa del proceso.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Responsabilidad</strong></div>
+                <div class="val-item-body"><p>Lo que asumimos, planificamos y prometemos, lo entregamos de forma rigurosa.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Trazabilidad y Orden</strong></div>
+                <div class="val-item-body"><p>Ningún proceso se gestiona ni se aprueba si no está debidamente registrado.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Compromiso con el Cliente</strong></div>
+                <div class="val-item-body"><p>Entendemos el impacto directo de nuestro trabajo en su cadena de valor logística.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Mejora Continua</strong></div>
+                <div class="val-item-body"><p>Optimizamos los métodos de manera sistemática; siempre hay una mejor forma de hacerlo.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Trabajo en Equipo</strong></div>
+                <div class="val-item-body"><p>Los resultados óptimos y consistentes dependen de la solidez del sistema global.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Transparencia</strong></div>
+                <div class="val-item-body"><p>Suministramos información clara y datos reales en los reportes de control y procesos.</p></div>
+            </div>
+            <div class="val-item">
+                <div class="val-item-head"><strong>Sustentabilidad</strong></div>
+                <div class="val-item-body"><p>Proceso industrial limpio, sin solventes volátiles, certificado ISO 14001.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="elegirnos">
+    <div class="wrap">
+        <div class="pq-hdr">
+            <span class="kicker">Diferenciadores clave</span>
+            <h2 class="tit">¿Por qué elegirnos?</h2>
+            <div class="raya"></div>
+            <p class="sub">Indicadores reales que justifican nuestra posición como socios estratégicos en el sector corporativo e industrial.</p>
+        </div>
+        <div class="pq-grid">
+            <div class="pq-card">
+                <div class="pq-card-head">
+                    <h3>45 Años de Experiencia</h3>
+                </div>
+                <div class="pq-card-body">
+                    <div class="pq-ico"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <p>La permanencia ininterrumpida en el mercado nos otorga el conocimiento técnico fundamental para responder a pliegos de alta complejidad operativa.</p>
+                </div>
+            </div>
+            <div class="pq-card">
+                <div class="pq-card-head">
+                    <h3>Velocidad de Respuesta</h3>
+                </div>
+                <div class="pq-card-body">
+                    <div class="pq-ico"><i class="fa-solid fa-gauge-high"></i></div>
+                    <p>Sabemos el costo que implica una parada operativa. Optimizamos los plazos de entrega adecuándonos de manera estricta a las urgencias de sus proyectos.</p>
+                </div>
+            </div>
+            <div class="pq-card">
+                <div class="pq-card-head">
+                    <h3>Procesos Auditados</h3>
+                </div>
+                <div class="pq-card-body">
+                    <div class="pq-ico"><i class="fa-solid fa-shield-halved"></i></div>
+                    <p>Las certificaciones internacionales ISO 9001 e ISO 14001 aseguran uniformidad, control de espesores estricto y excelente adherencia final.</p>
+                </div>
+            </div>
+            <div class="pq-card">
+                <div class="pq-card-head">
+                    <h3>Sustentabilidad Activa</h3>
+                </div>
+                <div class="pq-card-body">
+                    <div class="pq-ico"><i class="fa-solid fa-seedling"></i></div>
+                    <p>Trabajamos bajo un modelo industrial limpio, libre de solventes volátiles, reduciendo activamente el impacto ambiental conforme a la norma ISO 14001.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<div class="cta-banda">
+    <div class="wrap">
+        <h2>¿Su proyecto necesita un recubrimiento de alto rendimiento?</h2>
+        <p>Hable con un asesor técnico o complete nuestro formulario para enviarnos los detalles de su requerimiento.</p>
+        
+        <div class="cta-botones">
+            <a href="https://wa.me/5491168808040?text=Hola,%20TA-DIN.%20Me%20comunico%20para%20realizar%20una%20consulta." target="_blank" class="btn btn-sol">
+                <i class="fa-brands fa-whatsapp"></i>
+                Contactar un Asesor
+            </a>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGd82Jdg_6Gn1Rj59mM4-eqpnM5dUHn44p6f221eC770JCoA/viewform?usp=publish-editor" target="_blank" class="btn btn-alt">
+                <i class="fa-solid fa-file-invoice"></i>
+                Solicitar Cotización
+            </a>
+        </div>
+    </div>
+</div>
+ 
+<footer id="contacto">
+    <div class="wrap">
+        <div class="ft-grid">
+            <div class="ft-col">
+                <h4>TA-DIN</h4>
+                <p>Ingeniería y precisión aplicadas a tratamientos superficiales y recubrimientos en polvo avanzados para la gran industria del país.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Secciones</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#soluciones">Soluciones</a></li>
+                    <li><a href="#identidad">Identidad</a></li>
+                    <li><a href="#elegirnos">¿Por qué elegirnos?</a></li>
+                </ul>
+            </div>
+            <div class="ft-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Planta Industrial · Argentina</li>
+                    <li style="margin-top:10px;">
+                        <a href="mailto:info@tadin.com?subject=Consulta%20desde%20Sitio%20Web" class="ft-social-link mail-link" style="color:rgba(253,253,251,.45); font-weight:600;">
+                            <i class="fa-solid fa-envelope"></i> info@tadin.com
+                        </a>
+                     </li>
+                     <li style="margin-top:10px;">
+                        <a href="https://www.instagram.com/tadin_esmaltaciones/" target="_blank" class="ft-social-link ig-link" style="color:rgba(253,253,251,.45); font-weight:600;">
+                            <i class="fa-brands fa-instagram"></i> @tadin_esmaltaciones
+                        </a>
+                     </li>
+                    <li style="margin-top:20px;">
+                        <strong>ISO 9001 &nbsp;|&nbsp; ISO 14001</strong><br>
+                        <span style="font-size:.8rem;color:rgba(253,253,251,.35);">Sistemas de Gestión Certificados</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ft-bottom">
+            <span>&copy; 2026 TA-DIN. Todos los derechos reservados. Infraestructura Certificada de Alta Exigencia.</span>
+            <div class="iso-chips">
+                <span class="iso-chip">ISO 9001</span>
+                <span class="iso-chip">ISO 14001</span>
+            </div>
+        </div>
+    </div>
+</footer>
+ 
+<div class="contenedor-flotante">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@tadin.com&su=Consulta+desde+Sitio+Web" target="_blank" class="btn-flotante mail" title="Enviar Correo Electrónico">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com/tadin_esmaltaciones/" target="_blank" class="btn-flotante instagram" title="Síguenos en Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+
+<!-- Modal Emergente de Galería -->
+<div id="modal-galeria" class="modal-galeria" onclick="cerrarModalAfuera(event)">
+    <div class="modal-contenido">
+        <div class="modal-header">
+            <h3 id="modal-titulo">Trabajos Realizados</h3>
+            <button class="btn-cerrar-modal" onclick="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            <div id="modal-galeria-grid" class="galeria-grid">
+                <!-- Se cargan las fotos únicamente -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const galerias = {
+        petroleo: {
+            titulo: "Trabajos en Petróleo & Gas / Gasoductos",
+            imagenes: [
+                { url: "img/petroleo-1.jpeg" },
+                { url: "img/petroleo-2.jpeg" },
+                { url: "img/petroleo-3.jpeg" },
+                { url: "img/petroleo-4.jpeg" },
+                { url: "img/petroleo-5.jpeg" }
+            ]
+        },
+        energia: {
+            titulo: "Trabajos en Energía",
+            imagenes: [
+                { url: "img/energia-1.jpeg" },
+                { url: "img/energia-2.jpeg" },
+                { url: "img/energia-3.jpeg" },
+                { url: "img/energia-4.jpeg" }
+            ]
+        },
+        telecomunicaciones: {
+            titulo: "Trabajos en Telecomunicaciones",
+            imagenes: [
+                { url: "img/telefonica-1.jpeg" },
+                { url: "img/telefonica-2.jpeg" },
+                { url: "img/telefonica-3.jpeg" },
+                { url: "img/telefonica-4.jpeg" }
+            ]
+        },
+        mineria: {
+            titulo: "Trabajos en Minería",
+            imagenes: [
+                { url: "img/mineria-1.jpeg" },
+                { url: "img/mineria-2.jpeg" },
+                { url: "img/mineria-3.jpeg" },
+                { url: "img/mineria-4.jpeg" },
+                { url: "img/mineria-5.jpeg" }
+            ]
+        }
+    };
+
+    document.querySelectorAll('.sol-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const sectorKey = this.getAttribute('data-sector');
+            const dataSector = galerias[sectorKey];
+
+            if (dataSector) {
+                abrirModal(dataSector.titulo, dataSector.imagenes);
+            }
+        });
+    });
+
+    function abrirModal(titulo, imagenes) {
+        document.getElementById('modal-titulo').textContent = titulo;
+        const grid = document.getElementById('modal-galeria-grid');
+        grid.innerHTML = '';
+
+        if (!imagenes || imagenes.length === 0) {
+            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--gris-med);">No hay fotos disponibles para este sector por el momento.</p>';
+        } else {
+            imagenes.forEach(img => {
+                const item = document.createElement('div');
+                item.className = 'galeria-item';
+                item.innerHTML = `
+                    <img src="${img.url}" alt="Trabajo realizado TA-DIN" onerror="this.src='https://via.placeholder.com/400x300?text=Trabajo+TA-DIN'">
+                `;
+                grid.appendChild(item);
+            });
+        }
+
+        document.getElementById('modal-galeria').classList.add('activo');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModal() {
+        document.getElementById('modal-galeria').classList.remove('activo');
+        document.body.style.overflow = 'auto';
+    }
+
+    function cerrarModalAfuera(event) {
+        if (event.target.id === 'modal-galeria') {
+            cerrarModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            cerrarModal();
+        }
+    });
+</script>
+
+</body>
+</html>

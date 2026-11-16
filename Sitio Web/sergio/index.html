@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Oficial | TA-DIN Recubrimientos Industriales</title>
+    <!-- Favicon & Meta -->
+    <meta name="description" content="Tarjeta digital de contacto oficial de TA-DIN. Guardá nuestros datos o comunicate directamente con nuestro equipo técnico.">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --azul:       #111E2E; /* Azul oscuro profundo */
+            --azul-med:   #1A2D44; /* Variante media para hovers */
+            --azul-vivo:  #243D5C; /* Azul de acento sobrio */
+            --gris-osc:   #2C363F; 
+            --gris-med:   #5A6571;
+            --gris-lne:   #DDE3EB;
+            --bg-claro:   #FDFDFB; /* Blanco roto pulcro */
+            --bg-soluciones: #EAECF2;
+            --blanco-tarjetas: #FFFFFF;
+            --texto-cuerpo: #111E2E;
+            --instagram:  #111E2E;
+            --whatsapp:   #25D366;
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: var(--texto-cuerpo);
+            background: var(--bg-claro);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* ─── HEADER MINIMALISTA ─── */
+        header {
+            background: var(--blanco-tarjetas);
+            border-bottom: 1px solid var(--gris-lne);
+            padding: 14px 0;
+            box-shadow: 0 2px 8px rgba(17,30,46,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-wrap {
+            width: 90%;
+            max-width: 540px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-box img { height: 38px; display: block; }
+        .logo-text-group { display: flex; flex-direction: column; }
+        .logo-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--azul);
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gris-med);
+            margin-top: 2px;
+        }
+        .web-link-btn {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--azul-vivo);
+            text-decoration: none;
+            border: 1px solid var(--azul-vivo);
+            padding: 6px 12px;
+            border-radius: 2px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .web-link-btn:hover {
+            background: var(--azul-vivo);
+            color: var(--blanco-tarjetas);
+        }
+
+        /* ─── CONTENEDOR PRINCIPAL NFC / RESPONSIVE ─── */
+        main {
+            flex: 1;
+            width: 90%;
+            max-width: 540px;
+            margin: 20px auto 36px;
+        }
+
+        /* Tarjeta Principal de Identidad */
+        .card-main {
+            background: var(--blanco-tarjetas);
+            border: 1px solid var(--gris-lne);
+            border-top: 4px solid var(--azul-vivo);
+            padding: 28px 20px;
+            box-shadow: 0 8px 24px rgba(17,30,46,0.06);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .brand-hero-logo {
+            max-width: 170px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 12px;
+            display: block;
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--azul-vivo);
+            margin-bottom: 8px;
+        }
+        .kicker::before, .kicker::after {
+            content:'';
+            display:inline-block;
+            width:16px; height:2px;
+            background:var(--azul-vivo);
+        }
+
+        .card-main h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(1.6rem, 5vw, 1.85rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--azul);
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .card-main p.desc {
+            font-size: 0.92rem;
+            color: var(--gris-med);
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        /* Botón Guardar Contacto (vCard) */
+        .btn-vcard {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: var(--azul);
+            color: var(--blanco-tarjetas);
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 16px 16px;
+            border-radius: 2px;
+            box-shadow: 0 4px 14px rgba(17,30,46,0.25);
+            transition: all 0.22s;
+        }
+        .btn-vcard:hover {
+            background: var(--azul-vivo);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(17,30,46,0.3);
+        }
+        .btn-vcard i { font-size: 1.15rem; }
+
+        /* Chips ISO */
+        .iso-chips-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .iso-chip-mini {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--azul-vivo);
+            background: var(--bg-soluciones);
+            border: 1px solid var(--gris-lne);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        /* Bloque de Accesos / Redes */
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--blanco-tarjetas);
+            border: 1px solid var(--gris-lne);
+            border-left: 3px solid var(--azul-vivo);
+            padding: 14px 16px;
+            text-decoration: none;
+            color: var(--texto-cuerpo);
+            transition: all 0.2s;
+        }
+        .link-card:hover {
+            border-left-color: var(--azul);
+            background: #F4F6F9;
+            transform: translateX(3px);
+        }
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-soluciones);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .link-icon i {
+            font-size: 1.2rem;
+            color: var(--azul-vivo);
+        }
+        .link-content {
+            flex: 1;
+            min-width: 0; /* Para evitar desbordamientos en pantallas muy angostas */
+        }
+        .link-label {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gris-med);
+        }
+        .link-value {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--azul);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .link-arrow {
+            font-size: 0.85rem;
+            color: var(--gris-med);
+            flex-shrink: 0;
+        }
+
+        .link-card.ws:hover .link-icon i { color: var(--whatsapp); }
+        .link-card.ig:hover .link-icon i { color: #E1306C; }
+
+        /* Tarjeta Código QR */
+        .card-qr {
+            background: var(--blanco-tarjetas);
+            border: 1px solid var(--gris-lne);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(17,30,46,0.03);
+        }
+        .card-qr h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--azul);
+            margin-bottom: 4px;
+        }
+        .card-qr p {
+            font-size: 0.78rem;
+            color: var(--gris-med);
+            margin-bottom: 14px;
+        }
+        .qr-frame {
+            display: inline-block;
+            padding: 10px;
+            background: #FFFFFF;
+            border: 1px solid var(--gris-lne);
+            border-radius: 4px;
+        }
+        .qr-frame img {
+            width: 140px;
+            height: 140px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #09111A;
+            border-top: 3px solid var(--azul-vivo);
+            padding: 24px 0;
+            text-align: center;
+            color: rgba(253,253,251,0.45);
+            font-size: 0.75rem;
+        }
+        footer p { margin-bottom: 4px; }
+        footer strong { color: rgba(253,253,251,0.8); }
+
+        /* Ajustes adicionales para pantallas pequeñas (360px o menos) */
+        @media (max-width: 380px) {
+            .header-wrap { gap: 8px; }
+            .logo-title { font-size: 1.2rem; }
+            .logo-sub { font-size: 0.5rem; }
+            .web-link-btn { padding: 5px 8px; font-size: 0.65rem; }
+            .btn-vcard { font-size: 0.8rem; padding: 14px 10px; }
+            .link-value { font-size: 0.92rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con acceso directo a tadin.com.ar -->
+    <header>
+        <div class="header-wrap">
+            <a href="http://tadin.com.ar" class="logo-box">
+                <img src="../Gemini_Generated_Image_vnl4vevnl4vevnl4_2.png" alt="TA-DIN Logo" onerror="this.style.display='none';">
+                <div class="logo-text-group">
+                    <span class="logo-title">TA·DIN</span>
+                    <span class="logo-sub">Recubrimientos Industriales</span>
+                </div>
+            </a>
+            <a href="http://tadin.com.ar" class="web-link-btn">
+                <i class="fa-solid fa-globe"></i> Sitio Web
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal optimizado para NFC / Celular -->
+    <main>
+        
+        <!-- Tarjeta Principal de Presentación Institucional -->
+        <div class="card-main">
+            <img src="../Gemini_Generated_Image_vnl4vevnl4vevnl4_2.png" alt="TA-DIN" class="brand-hero-logo" onerror="this.style.display='none';">
+            <span class="kicker">Contacto Oficial</span>
+            <h1>TA-DIN</h1>
+            <p class="desc">Servicio Profesional de Pintura Electroestática y Recubrimientos Industriales</p>
+            
+          
+
+            <!-- Certificaciones -->
+            <div class="iso-chips-container">
+                <span class="iso-chip-mini"><i class="fa-solid fa-certificate"></i> ISO 9001</span>
+                <span class="iso-chip-mini"><i class="fa-solid fa-leaf"></i> ISO 14001</span>
+            </div>
+        </div>
+
+        <!-- Canales Directos de Contacto -->
+        <div class="contact-links">
+            
+            <!-- WhatsApp -->
+            <a href="https://api.whatsapp.com/send/?phone=5491155236129&text&type=phone_number&app_absent=0" target="_blank" class="link-card ws">
+                <div class="link-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-label">Atención Comercial / Asesor</span>
+                    <span class="link-value">+54 15 5523-6129</span>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Correo Electrónico Institucional -->
+            <a href="mailto:info@tadin.com?subject=Consulta%20desde%20Tarjeta%20NFC" class="link-card">
+                <div class="link-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-label">Correo Institucional</span>
+                    <span class="link-value">info@tadin.com</span>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/tadin_esmaltaciones/" target="_blank" class="link-card ig">
+                <div class="link-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-label">Instagram Oficial</span>
+                    <span class="link-value">@tadin_esmaltaciones</span>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Cotizaciones (Google Forms) -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGd82Jdg_6Gn1Rj59mM4-eqpnM5dUHn44p6f221eC770JCoA/viewform?usp=publish-editor" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-label">Presupuestos</span>
+                    <span class="link-value">Solicitar Cotización Técnica</span>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+        </div>
+
+
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer>
+        <p><strong>TA-DIN</strong> · Recubrimientos Industriales en Polvo</p>
+        <p>&copy; 2026 TA-DIN. Todos los derechos reservados. Certificaciones ISO 9001 e ISO 14001.</p>
+    </footer>
+
+</body>
+</html>
